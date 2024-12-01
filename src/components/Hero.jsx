@@ -13,7 +13,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-black text-white h-screen flex items-center w-[90%] mx-auto">
+    <section className="bg-black text-white h-screen flex items-center w-[90%] mx-auto pt-10">
       <div className="container mx-auto px-6 md:flex md:justify-between md:items-center">
         <div className="md:w-1/2">
           <motion.h1

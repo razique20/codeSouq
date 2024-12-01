@@ -4,7 +4,7 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <section className="bg-black text-white py-20">
+    <section className="bg-black text-white py-20 w-[90%] mx-auto">
       <div className="container mx-auto px-6">
         <motion.h2
           className="text-4xl font-extrabold text-center hover:text-gold"
