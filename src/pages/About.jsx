@@ -1,9 +1,16 @@
 // src/pages/About.jsx
-import React from 'react';
 import { FaLightbulb, FaRocket, FaHandshake } from 'react-icons/fa';
 import { motion } from 'framer-motion'; // Import framer-motion
-
+import { useNavigate } from 'react-router-dom';
 const About = () => {
+
+
+    const navigate = useNavigate()
+
+    const handleLearnMoreClick = () => {
+        window.scrollTo(0, 0); // Scroll to the top of the page
+        navigate('/contact'); // Navigate to the /about page
+      };
   return (
     <div className="bg-black text-white py-10">
       {/* Hero Section */}
@@ -15,7 +22,7 @@ const About = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <motion.h1
-            className="text-5xl font-bold text-white mb-6"
+            className="text-5xl font-bold text-white mb-6 hover:text-gold"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -34,92 +41,71 @@ const About = () => {
       </motion.section>
 
       {/* Mission, Vision, and Values */}
-      <motion.section
-        className="py-16"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <section className="py-16 w-[90%] mx-auto">
         <div className="container mx-auto px-6 grid md:grid-cols-3 gap-12">
           {/* Mission */}
-          <motion.div
-            className="text-center"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <FaLightbulb className="text-gold mx-auto text-6xl mb-6 transition duration-300 hover:text-yellow-500" />
-            <h2 className="text-2xl font-bold text-white mb-4">Our Mission</h2>
-            <p className="text-gray-400">
+          <div className="service-card p-8 flex flex-col items-center bg-black text-white rounded-xl shadow-xl border border-gold transition duration-300 hover:shadow-2xl hover:scale-105">
+            <FaLightbulb className="hover:text-gold text-6xl mb-4 transition duration-300 " />
+            <h2 className="text-2xl font-bold text-gold mb-2 text-center">Our Mission</h2>
+            <p className="text-gray-400 text-center">
               Empower businesses with tailored digital solutions that deliver results.
             </p>
-          </motion.div>
+            <p className="text-gray-400 text-center mt-4">
+              We strive to create custom digital solutions that drive success for your business. Let's work together to transform your ideas into reality.
+            </p>
+            
+          </div>
 
           {/* Vision */}
-          <motion.div
-            className="text-center"
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <FaRocket className="text-gold mx-auto text-6xl mb-6 transition duration-300 hover:text-yellow-500" />
-            <h2 className="text-2xl font-bold text-white mb-4">Our Vision</h2>
-            <p className="text-gray-400">
+          <div className="service-card p-8 flex flex-col items-center bg-black text-white rounded-xl shadow-xl border border-gold transition duration-300 hover:shadow-2xl hover:scale-105">
+            <FaRocket className="hover:text-gold text-6xl mb-4 transition duration-300" />
+            <h2 className="text-2xl font-bold text-gold mb-2 text-center">Our Vision</h2>
+            <p className="text-gray-400 text-center">
               To become Dubai’s most trusted partner for digital transformation.
             </p>
-          </motion.div>
+            <p className="text-gray-400 text-center mt-4">
+              Our vision is to push the boundaries of innovation and bring new, impactful technologies to your business.
+            </p>
+           
+          </div>
 
           {/* Values */}
-          <motion.div
-            className="text-center"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <FaHandshake className="text-gold mx-auto text-6xl mb-6 transition duration-300 hover:text-yellow-500" />
-            <h2 className="text-2xl font-bold text-white mb-4">Our Values</h2>
-            <p className="text-gray-400">
+          <div className="service-card p-8 flex flex-col items-center bg-black text-white rounded-xl shadow-xl border border-gold transition duration-300 hover:shadow-2xl hover:scale-105">
+            <FaHandshake className="hover:text-gold text-6xl mb-4 transition duration-300 " />
+            <h2 className="text-2xl font-bold text-gold mb-2 text-center">Our Values</h2>
+            <p className="text-gray-400 text-center">
               Integrity, innovation, and a customer-first approach.
             </p>
-          </motion.div>
+            <p className="text-gray-400 text-center mt-4">
+              We prioritize transparency, continuous innovation, and customer satisfaction above all.
+            </p>
+           
+          </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Call-to-Action */}
-      <motion.section
-        className="py-16"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="container mx-auto px-6 text-center">
-          <motion.h2
-            className="text-4xl font-bold text-gold mb-6"
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            Let’s Build Your Digital Future
-          </motion.h2>
-          <motion.p
-            className="text-gray-400 max-w-2xl mx-auto mb-8"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            Transform your ideas into impactful solutions with CodeSouq. Together, we’ll redefine success in the digital age.
-          </motion.p>
-          <motion.a
-            href="/contact"
-            className="inline-block bg-gold text-black px-8 py-3 rounded-full text-lg font-semibold transition duration-300 hover:bg-yellow-500"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            Get In Touch
-          </motion.a>
-        </div>
-      </motion.section>
+      {/* Additional CTA Section */}
+      <section className="bg-black text-white py-16 text-center">
+        <motion.h2
+          className="text-4xl font-bold mb-4"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          Ready to transform your business?
+        </motion.h2>
+        <motion.p
+          className="text-gray-400 mb-6"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Join CodeSouq and take the first step towards your digital future. We’re here to help you succeed.
+        </motion.p>
+        <button onClick={handleLearnMoreClick} className="bg-gold text-black py-3 px-6 rounded-lg hover:bg-white hover:text-black transition duration-300">
+          Get Started
+        </button>
+      </section>
     </div>
   );
 };
