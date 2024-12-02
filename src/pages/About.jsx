@@ -41,7 +41,9 @@ const About = () => {
       </motion.section>
 
       {/* Mission, Vision, and Values */}
-      <section className="py-16 w-[90%] mx-auto">
+      <section className="py-9  w-[90%] mx-auto">
+
+      
         <div className="container mx-auto px-6 grid md:grid-cols-3 gap-12">
           {/* Mission */}
           <div className="service-card p-8 flex flex-col items-center bg-black text-white rounded-xl shadow-xl border border-gold transition duration-300 hover:shadow-2xl hover:scale-105">
