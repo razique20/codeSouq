@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black text-white fixed w-full top-0 z-10 shadow-lg">
-      <div className="container mx-auto flex justify-end items-center p-6">
+      <div className="container mx-auto flex justify-end sm:justify-center items-center p-6">
         {/* Logo */}
 
         {/* Menu */}

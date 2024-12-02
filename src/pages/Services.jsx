@@ -1,141 +1,95 @@
-import { FaCode, FaShoppingCart, FaChartLine } from 'react-icons/fa';
-import { motion } from 'framer-motion'; // Import Framer Motion
-import { useNavigate } from 'react-router-dom';
+// src/pages/Services.jsx
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+
 const Services = () => {
-const navigate = useNavigate()
+  // State to manage "Read More" for each card
+  const [expanded, setExpanded] = useState({});
 
-
-const handleLearnMoreClick = () => {
-    window.scrollTo(0, 0); // Scroll to the top of the page
-    navigate('/contact'); // Navigate to the /about page
+  // Toggle function to expand or collapse a card
+  const toggleReadMore = (index) => {
+    setExpanded((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }));
   };
 
- return(
-  <section className="bg-black text-white pt-20 min-h-screen flex items-center justify-center">
-    <div className="container mx-auto px-4 text-center">
-      {/* Animated Headline */}
-      <motion.h2
-        className="text-3xl md:text-4xl lg:text-5xl font-extrabold"
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        Our Services
-      </motion.h2>
-      {/* Animated Subheadline */}
-      <motion.p
-        className="mt-4 text-base md:text-lg lg:text-xl text-gray-300"
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        Discover how we can help your business thrive in the digital era.
-      </motion.p>
-      {/* Service Cards */}
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-[90%] mx-auto">
-        {/* Web Development */}
-        <div className="p-6 bg-black rounded-lg hover:shadow-xl transition relative border border-gold">
-          <FaCode className="hover:text-gold text-4xl mx-auto mb-4" />
-          <h3 className="text-xl md:text-2xl font-bold text-gold">Web Development</h3>
-          <p className="mt-2 text-sm md:text-base text-gray-300">
-            Build robust, responsive, and modern websites tailored to your needs.
-          </p>
-          {/* Small Gold Border */}
-          {/* <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-1/3 h-1 bg-gold"></div> */}
-        </div>
+  // Array of services with icons
+  const services = [
+    {
+      title: 'Web Development',
+      icon: 'fas fa-laptop-code', // Font Awesome class
+      shortDescription: 'We craft modern, responsive, and user-friendly websites to strengthen your online presence.',
+      fullDescription: 'Our web development services include custom website design, responsive layouts, fast-loading and SEO-optimized websites, and integration with third-party tools and APIs. Whether you need a personal blog or a corporate site, we ensure your vision comes to life.',
+    },
+    {
+      title: 'E-commerce Solutions',
+      icon: 'fas fa-store',
+      shortDescription: 'Build an online store that converts visitors into loyal customers.',
+      fullDescription: 'We provide custom online store designs, secure payment gateways, inventory management systems, and scalable solutions to grow your e-commerce business. From small startups to large enterprises, we tailor solutions to meet your needs.',
+    },
+    {
+      title: 'Digital Marketing',
+      icon: 'fas fa-bullhorn',
+      shortDescription: 'Drive traffic, generate leads, and boost sales with targeted strategies.',
+      fullDescription: 'Our digital marketing services include social media campaigns, email marketing, content creation, Google Ads, and PPC campaigns. We connect you with your target audience and help you achieve measurable results.',
+    },
+    {
+      title: 'UI/UX Design',
+      icon: 'fas fa-paint-brush',
+      shortDescription: 'Create intuitive and visually engaging designs for better user experience.',
+      fullDescription: 'We offer wireframing, prototyping, user research, and design systems that focus on enhancing user interaction. Our responsive and interactive designs ensure a seamless experience across all devices.',
+    },
+    {
+      title: 'Search Engine Optimization',
+      icon: 'fas fa-search',
+      shortDescription: 'Improve your website\'s ranking to attract organic traffic.',
+      fullDescription: 'Our SEO services include on-page and off-page optimization, keyword research, content optimization, and analytics monitoring to improve visibility and drive quality traffic to your website.',
+    },
+    {
+      title: 'Maintenance and Support',
+      icon: 'fas fa-tools',
+      shortDescription: 'Keep your website updated, secure, and running smoothly.',
+      fullDescription: 'Our maintenance services include regular updates, backups, security patches, performance optimization, and 24/7 technical support to ensure your website operates flawlessly.',
+    },
+  ];
 
-        {/* E-Commerce */}
-        <div className="p-6 bg-black rounded-lg hover:shadow-xl transition relative border border-gold">
-          <FaShoppingCart className="hover:text-gold text-4xl mx-auto mb-4" />
-          <h3 className="text-xl md:text-2xl font-bold text-gold">E-Commerce</h3>
-          <p className="mt-2 text-sm md:text-base text-gray-300">
-            Launch scalable and user-friendly online stores to boost your sales.
-          </p>
-          {/* Small Gold Border */}
-          {/* <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-1/3 h-1 bg-gold"></div> */}
-        </div>
-
-        {/* Digital Marketing */}
-        <div className="p-6 bg-black rounded-lg hover:shadow-xl transition relative border border-gold">
-          <FaChartLine className="hover:text-gold text-4xl mx-auto mb-4" />
-          <h3 className="text-xl md:text-2xl font-bold text-gold">Digital Marketing</h3>
-          <p className="mt-2 text-sm md:text-base text-gray-300">
-            Elevate your brand and reach your target audience effectively.
-          </p>
-          {/* Small Gold Border */}
-          {/* <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-1/3 h-1 bg-gold"></div> */}
-        </div>
-      </div>
-
-      {/* Additional Section - Why Choose Us */}
-      <motion.section
-        className="py-16 bg-black text-white mt-16"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="container mx-auto px-6 text-center">
-          <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gold"
-            initial={{ y: -50, opacity: 0 }}
+  return (
+    <div className="bg-black text-white py-10 mt-10">
+      <div className="container mx-auto px-5">
+      <motion.h1
+            className="text-5xl font-bold text-white mb-10 hover:text-gold text-center mt-3"
+            initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            Why Choose CodeSouq?
-          </motion.h2>
-          <motion.p
-            className="mt-4 text-lg text-gray-300"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            We combine creativity, technology, and passion to craft solutions that help businesses scale and succeed. Our approach is customer-first, ensuring your needs are met every step of the way.
-          </motion.p>
+            Our Services
+          </motion.h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 w-[90%] mx-auto">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="service-card p-6 bg-black text-white rounded-xl shadow-xl border border-gold items-center justify-center flex flex-col"
+            >
+              <div className="text-5xl sm:text-6xl  mb-4">
+                <i className={service.icon}></i> {/* Icon added here */}
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gold mb-4">{service.title}</h2>
+              <p className="text-base sm:text-lg text-gray-300 mb-4">
+                {expanded[index] ? service.fullDescription : service.shortDescription}
+              </p>
+              <button
+                onClick={() => toggleReadMore(index)}
+                className="text-gold hover:text-white underline font-medium text-sm"
+              >
+                {expanded[index] ? 'Read Less' : 'Read More'}
+              </button>
+            </div>
+          ))}
         </div>
-      </motion.section>
-
-      {/* Call to Action Section */}
-
-      <div className='border-t border-gold w-[45%] mx-auto'>
-
       </div>
-      <motion.section
-        className="py-16 bg-black text-white "
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="container mx-auto px-6 text-center">
-          <motion.h2
-            className="text-3xl md:text-4xl font-extrabold"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            Ready to get started?
-          </motion.h2>
-          <motion.p
-            className="mt-4 text-lg text-white"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Let us help you take your business to the next level. Get in touch with us to discuss your project.
-          </motion.p>
-          <motion.button
-            className="mt-6 px-8 py-3 text-lg font-semibold bg-gold text-black rounded-full hover:bg-white transition"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            onClick={handleLearnMoreClick}
-          >
-            Contact Us
-          </motion.button>
-        </div>
-      </motion.section>
     </div>
-  </section>
-);
-}
+  );
+};
 
 export default Services;
