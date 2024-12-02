@@ -11,8 +11,9 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black text-white fixed w-full top-0 z-10 shadow-lg">
-      <div className="container mx-auto flex justify-end sm:justify-center items-center p-6">
+      <div className="container mx-auto flex justify-between sm:justify-center items-center p-6">
         {/* Logo */}
+        <h1 className="text-gold sm:hidden text-2xl ">CODESOUQ</h1>
 
         {/* Menu */}
         <div className="hidden md:flex space-x-6">
