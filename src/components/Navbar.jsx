@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
+
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -13,7 +16,7 @@ const Navbar = () => {
     <nav className="bg-black text-white fixed w-full top-0 z-10 shadow-lg">
       <div className="container mx-auto flex justify-between sm:justify-center items-center p-6">
         {/* Logo */}
-        <h1 className="text-gold sm:hidden text-2xl ">CODESOUQ</h1>
+        <h1 onClick={() => navigate("/")} className="text-gold sm:hidden text-2xl cursor-pointer ">CODESOUQ</h1>
 
         {/* Menu */}
         <div className="hidden md:flex space-x-6">
