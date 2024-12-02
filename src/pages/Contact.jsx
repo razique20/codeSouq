@@ -72,7 +72,7 @@ const Contact = () => {
                     type="text"
                     id="name"
                     placeholder="Enter your name"
-                    className="mt-1 w-full p-3 bg-gray-700 text-white rounded-lg outline-none focus:ring-2 focus:ring-gold"
+                    className="mt-1 w-full p-3 bg-white text-white rounded-lg outline-none focus:ring-2 focus:ring-gold"
                   />
                 </div>
                 <div>
@@ -86,7 +86,7 @@ const Contact = () => {
                     type="email"
                     id="email"
                     placeholder="Enter your email"
-                    className="mt-1 w-full p-3 bg-gray-700 text-white rounded-lg outline-none focus:ring-2 focus:ring-gold"
+                    className="mt-1 w-full p-3 bg-white text-white rounded-lg outline-none focus:ring-2 focus:ring-gold"
                   />
                 </div>
               </div>
@@ -101,7 +101,7 @@ const Contact = () => {
                   type="text"
                   id="subject"
                   placeholder="Enter your subject"
-                  className="mt-1 w-full p-3 bg-gray-700 text-white rounded-lg outline-none focus:ring-2 focus:ring-gold"
+                  className="mt-1 w-full p-3 bg-white text-white rounded-lg outline-none focus:ring-2 focus:ring-gold"
                 />
               </div>
               <div className="mt-4">
@@ -115,7 +115,7 @@ const Contact = () => {
                   id="message"
                   placeholder="Write your message"
                   rows="5"
-                  className="mt-1 w-full p-3 bg-gray-700 text-white rounded-lg outline-none focus:ring-2 focus:ring-gold"
+                  className="mt-1 w-full p-3 bg-white text-white rounded-lg outline-none focus:ring-2 focus:ring-gold"
                 ></textarea>
               </div>
               <button
