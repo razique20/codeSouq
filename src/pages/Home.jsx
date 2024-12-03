@@ -36,7 +36,7 @@ const services = [
 ];
 
 const Home = () => (
-  <div className="bg-black text-white py-2">
+  <div className="bg-black text-white py-2 pb-20 mb-20">
     <Hero />
     <section className="py-5">
       <div className="container mx-auto text-center">
